@@ -1,3 +1,4 @@
+<%@page import="dao.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dao.LivroDAO"%>
 <%@page import="org.mypackage.catalogo.Livro"%>

@@ -12,7 +12,7 @@ public class UsuarioDAO {
     private PreparedStatement stmt;
     private Statement st;
     private ResultSet rs;
-
+    
     public UsuarioDAO() {
         conn = new ConnectionFactory().getConexao();
     }
