@@ -17,11 +17,12 @@
             <label>Ano:</label><br/>
             <input type="number" name="ano" value="<%=request.getParameter("ano")%>"/><br/>
             
-            <label>Preço</label><br/>
+            <label>Preço:</label><br/>
             <input type="number" name="preco" value="<%=request.getParameter("preco")%>"/><br/>
             
+            
             <label>Nova foto:</label><br/>
-            <input type="file" name="foto" /><br/><br/>
+            <input type="text" name="foto" value="<%=request.getParameter("foto")%>"/><br/><br/>
             
             <!-- Podemos mostrar a foto atual aqui -->
             

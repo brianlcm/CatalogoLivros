@@ -13,16 +13,16 @@
             try{
                 Livro pro = new Livro();
                 LivroDAO prd = new LivroDAO();
-                if(request.getParameter("titulo").equals("") || request.getParameter("autor").equals("") || request.getParameter("ano").equals("") || request.getParameter("foto").equals("")){
+                if(request.getParameter("titulo").equals("") || request.getParameter("autor").equals("") || request.getParameter("ano").equals("") || request.getParameter("preco").equals("") || request.getParameter("foto").equals("")){
                     response.sendRedirect("index.jsp");
                 }else{
                     pro.setTitulo(request.getParameter("titulo"));
                     pro.setAutor(request.getParameter("autor"));
                     pro.setAno(Integer.parseInt(request.getParameter("ano")));
-                    pro.setFoto(request.getParameter("foto"));
                     pro.setPreco(Double.parseDouble(request.getParameter("preco")));
+                    pro.setFoto(request.getParameter("foto"));
                     prd.alterar(pro);
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("ListaLivrosEditar.jsp");
                 }
             }catch(Exception erro){
                 throw new RuntimeException("Erro 9: "+erro);

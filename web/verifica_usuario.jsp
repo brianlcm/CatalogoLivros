@@ -28,7 +28,7 @@
                     st = conn.createStatement();
                     rs = st.executeQuery(sql);
                     if (rs.next()) {
-                        response.sendRedirect("administracao.jsp");
+                        response.sendRedirect("Administracao.jsp");
                     } else {
                         response.sendRedirect("index.jsp?");
                     }

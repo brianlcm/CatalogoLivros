@@ -1,4 +1,3 @@
-<%@page import="dao.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="dao.LivroDAO"%>
 <%@page import="org.mypackage.catalogo.Livro"%>
@@ -8,24 +7,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Página Inicial</title>
+        <title>Editar Livros</title>
     </head>
     <body>
-        <h2>Pesquisar livros</h2>
-        <form action="index.jsp" method="post">
+        <form action="ListaLivrosEditar.jsp" method="post">
             <label>Título: </label><br/>
             <input type="text" name="titulo"/><br/><br/>
             <button type="submit">
                 Pesquisar
             </button>
-            
-            <h2>Lista de livros</h2>
-            
-            <%
+        <%
             try{
                 out.print("<table border='1'>");
                 out.print("<tr>");
-                out.print("<th>Capa</th><th>ID</th><th>Título</th><th>Autor(a)</th><th>Ano</th><th>Preço</th><th>ID da Editora</th>");
+                out.print("<th>Capa</th><th>ID</th><th>Título</th><th>Autor(a)</th><th>Ano</th><th>Preço</th><th>ID da Editora</th><th>Editar</th>");
                 out.print("</tr>");
                 LivroDAO prd = new LivroDAO();
                 if(request.getParameter("titulo")=="" || request.getParameter("titulo")==null){
@@ -39,6 +34,7 @@
                         out.print("<td>"+lista.get(num).getAno()+"</td>");
                         out.print("<td>"+lista.get(num).getPreco()+"</td>");
                         out.print("<td>"+lista.get(num).getIdEditora()+"</td>");
+                        out.print("<td><a href='editar_livros.jsp?titulo="+lista.get(num).getTitulo()+"&autor="+lista.get(num).getAutor()+"&ano="+lista.get(num).getAno()+"&preco="+lista.get(num).getPreco()+"&foto="+lista.get(num).getFoto()+"&idEditora="+lista.get(num).getIdEditora()+" '> Editar</a></td>");
                         out.print("<tr>");
                     }
                 }else{
@@ -52,6 +48,7 @@
                         out.print("<td>"+lista.get(num).getAno()+"</td>");
                         out.print("<td>"+lista.get(num).getPreco()+"</td>");
                         out.print("<td>"+lista.get(num).getIdEditora()+"</td>");
+                        out.print("<td><a href='editar_livros.jsp?titulo="+lista.get(num).getTitulo()+"&autor="+lista.get(num).getAutor()+"&ano="+lista.get(num).getAno()+"&preco="+lista.get(num).getPreco()+"&foto="+lista.get(num).getFoto()+"&idEditora="+lista.get(num).getIdEditora()+" '> Editar</a></td>");
                         out.print("<tr>");
                     }
                 }
@@ -60,20 +57,5 @@
                 throw new RuntimeException("Erro 12: "+erro);
             }
         %>
-            
-        </form>
-        
-        <h2>Administrar Catálogo</h2>
-        <form action="verifica_usuario.jsp" method="post">
-            <label>Nome:</label><br/>
-            <input type="text" name="nome" /><br/>
-            
-            <label>Senha:</label><br/>
-            <input type="password" name="senha" /><br/><br/>
-
-            <button type="submit">
-                <b>Entrar</b>
-            </button>
-        </form>
     </body>
 </html>

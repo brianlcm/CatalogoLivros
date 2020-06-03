@@ -20,7 +20,6 @@
                     pro.setAutor(request.getParameter("autor"));
                     pro.setAno(Integer.parseInt(request.getParameter("ano")));
                     pro.setFoto(request.getParameter("foto"));
-                    pro.setIdEditora(Integer.parseInt(request.getParameter("idEditora")));
                     pro.setPreco(Double.parseDouble(request.getParameter("preco")));
                     prd.inserir(pro);
                     response.sendRedirect("index.jsp");

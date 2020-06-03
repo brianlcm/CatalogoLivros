@@ -43,6 +43,7 @@ public class LivroDAO {
             stmt.setInt(3, livro.getAno());
             stmt.setDouble(4, livro.getPreco());
             stmt.setString(5, livro.getFoto());
+            stmt.setInt(6, livro.getId());
             stmt.execute();
             stmt.close();
         }catch(Exception erro){

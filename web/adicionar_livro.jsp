@@ -20,8 +20,7 @@
             <label>Preço:</label><br/>
             <input type="number" name="preco" /><br/>
             
-            <label>ID da Editora:</label><br/>
-            <input type="number" name="idEditora" /><br/>
+
             
             <label>Foto da Capa:</label><br/>
             <input type="text" name="foto" /><br/><br/>
